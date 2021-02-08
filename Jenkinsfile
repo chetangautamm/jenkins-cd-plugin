@@ -5,13 +5,13 @@ pipeline {
     dockerImage = ""
   }
 
-  agent any
-
+  agent { label 'kubepod' }
+  
   stages {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/justmeandopensource/playjenkins.git'
+        git 'https://github.com/chetangautamm/jenkins-cd-plugin.git'
       }
     }
 
